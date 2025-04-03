@@ -1,0 +1,8 @@
+SELECT [NAME] FROM BusinessEntities
+UNION ALL
+SELECT NAME FROM Customers ORDER BY Name;
+
+SELECT Region FROM BusinessEntities UNION SELECT RegionName FROM Customers;
+
+SELECT REGION FROM BusinessEntities INTERSECT SELECT REGIONNAME FROM Customers;
+

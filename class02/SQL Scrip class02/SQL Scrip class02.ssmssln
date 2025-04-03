@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 20.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "SQL Scrip class02", "SQL Scrip class02\SQL Scrip class02.ssmssqlproj", "{3DCAD106-7AB7-4D71-9FE7-49E93208AB29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DCAD106-7AB7-4D71-9FE7-49E93208AB29}.Default|Default.ActiveCfg = Default
+		{86EA8C71-D339-4704-BFEA-9D752FC5AC5A}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9B239EF-6E34-4F20-A6EB-874B0876042B}
+	EndGlobalSection
+EndGlobal
