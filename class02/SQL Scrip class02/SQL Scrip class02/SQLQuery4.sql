@@ -28,3 +28,38 @@ ALTER TABLE Products ADD Quantity int;
 ALTER TABLE Orders WITH CHECK ADD CONSTRAINT FK_Order_BusinessEntities 
 FOREIGN KEY (BusinessEntityID)
 REFERENCES BusinessEntities (Id);
+
+-- Add these constraints in the SEDC database so that 
+-- the tables will be in a relation 
+
+ALTER TABLE [dbo].[OrderDetails] 
+ADD CONSTRAINT [FK_OrderDetails_Order] 
+FOREIGN KEY ([OrderId]) 
+REFERENCES [dbo].[Orders]([Id]);
+GO
+ALTER TABLE [dbo].[Orders] 
+ADD CONSTRAINT [FK_Order_BusinessEntity] 
+FOREIGN KEY ([BusinessEntityId]) 
+REFERENCES [dbo].[BusinessEntities]([Id]);
+GO
+ALTER TABLE [dbo].[Orders] 
+ADD CONSTRAINT [FK_Order_Employee] 
+FOREIGN KEY ([EmployeeId]) 
+REFERENCES [dbo].[Employees]([Id]);
+GO
+ALTER TABLE [dbo].[Orders] 
+ADD CONSTRAINT [FK_Order_Customer] 
+FOREIGN KEY ([CustomerId]) 
+REFERENCES [dbo].[Customers]([Id]);
+GO
+ALTER TABLE [dbo].[OrderDetails] 
+ADD CONSTRAINT [FK_OrderDetails_Product] 
+FOREIGN KEY ([ProductId]) 
+REFERENCES [dbo].[Products]([Id]);
+GO
+/*
+**?? Foreign Keys:**
+- `StudentID` ? `Student(ID)`
+- `CourseID` ? `Course(ID)`
+- `TeacherID` ? `Teacher(ID)`
+*/
