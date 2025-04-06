@@ -26,4 +26,10 @@ Find the Maximal Order amount, and the Average Order amount
 per BusinessEntity on all orders in the system. Filter only records
 where Total order amount is more than 4x bigger than average */
 
+SELECT be.Name, MAX(o.TotalPrice) AS MaximalOrderAmount, AVG(o.TotalPrice) AS AverageOrderAmount
+FROM Orders o
+INNER JOIN BusinessEntities be
+ON o.BusinessEntityId = be.Id
+GROUP BY be.Name
+HAVING MAX(o.TotalPrice) > (4.3 * AVG(o.TotalPrice));
 
