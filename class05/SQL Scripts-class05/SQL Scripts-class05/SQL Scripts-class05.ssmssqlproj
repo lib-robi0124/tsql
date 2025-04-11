@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="DESKTOP-NPS8RLI\SQLEXPRESS:DESKTOP-NPS8RLI\rober">
+        <ConnectionNode Name="DESKTOP-NPS8RLI\SQLEXPRESS:SKP-NB001\Administrator">
           <Created>2025-04-10T18:05:55.7623007+02:00</Created>
           <Type>SQL</Type>
           <Server>DESKTOP-NPS8RLI\SQLEXPRESS</Server>
@@ -14,6 +14,21 @@
           <TrustServerCertificate>False</TrustServerCertificate>
           <HostNameInServerCertificate />
           <EncryptionOption>False</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="SKP-NB001:SKP-NB001\Administrator">
+          <Created>2025-04-11T09:12:18.3566377+02:00</Created>
+          <Type>SQL</Type>
+          <Server>SKP-NB001</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>True</TrustServerCertificate>
+          <HostNameInServerCertificate />
+          <EncryptionOption>True</EncryptionOption>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
@@ -29,8 +44,8 @@
           <FullPath>SPwitnparam.sql</FullPath>
         </FileNode>
         <FileNode Name="SQLQuery1.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-NPS8RLI\SQLEXPRESS:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-NPS8RLI\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:SKP-NB001:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>SKP-NB001</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>SQLQuery1.sql</FullPath>
         </FileNode>
@@ -41,10 +56,16 @@
           <FullPath>stored.sql</FullPath>
         </FileNode>
         <FileNode Name="workshop.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-NPS8RLI\SQLEXPRESS:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-NPS8RLI\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:SKP-NB001:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>SKP-NB001</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>workshop.sql</FullPath>
+        </FileNode>
+        <FileNode Name="workshop2.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:SKP-NB001:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>SKP-NB001</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>workshop2.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
