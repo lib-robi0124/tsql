@@ -1,0 +1,9 @@
+--Calculate the count of all grades per Teacher in the system
+--? Calculate the count of all grades per Teacher in the system for first 100 tudents (ID < 100)
+--? Find the Maximal Grade, and the Average Grade per Student on all grades in the system
+--? Calculate the count of all grades per Teacher in the system and filter only grade count greater then 200
+--? Find the Grade Count, Maximal Grade, and the Average Grade per Student on all grades in the system. Filter only records where Maximal Grade is equal to Average Grade
+--? List Student First Name and Last Name next to the other details from previous query
+--? Create new view (vv_StudentGrades) that will List all StudentIds and count of Grades per student
+--? Change the view to show Student First and Last Names instead of StudentID
+--? List all rows from view ordered by biggest Grade Count
