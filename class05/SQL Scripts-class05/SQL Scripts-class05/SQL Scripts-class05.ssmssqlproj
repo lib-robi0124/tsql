@@ -37,6 +37,12 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
+        <FileNode Name="Homework02.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:SKP-NB001:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>SKP-NB001</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Homework02.sql</FullPath>
+        </FileNode>
         <FileNode Name="SPwitnparam.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-NPS8RLI\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-NPS8RLI\SQLEXPRESS</AssociatedConnSrvName>
