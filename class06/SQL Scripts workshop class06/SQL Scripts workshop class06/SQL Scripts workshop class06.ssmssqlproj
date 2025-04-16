@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
-<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SQL Scripts class03">
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SQL Scripts workshop class06">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="DESKTOP-NPS8RLI\SQLEXPRESS:DESKTOP-NPS8RLI\rober">
-          <Created>2025-04-10T17:59:48.1652569+02:00</Created>
+          <Created>2025-04-15T18:11:11.1714899+02:00</Created>
           <Type>SQL</Type>
           <Server>DESKTOP-NPS8RLI\SQLEXPRESS</Server>
           <UserName />
           <Authentication>Windows Authentication</Authentication>
-          <InitialDB>master</InitialDB>
+          <InitialDB>SEDC</InitialDB>
           <LoginTimeout>30</LoginTimeout>
-          <TrustServerCertificate>False</TrustServerCertificate>
+          <TrustServerCertificate>True</TrustServerCertificate>
           <HostNameInServerCertificate />
-          <EncryptionOption>False</EncryptionOption>
+          <EncryptionOption>True</EncryptionOption>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
@@ -22,29 +22,17 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="homework-class02.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>homework-class02.sql</FullPath>
-        </FileNode>
-        <FileNode Name="homework-class03.sql">
+        <FileNode Name="createTables.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-NPS8RLI\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-NPS8RLI\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>homework-class03.sql</FullPath>
+          <FullPath>createTables.sql</FullPath>
         </FileNode>
-        <FileNode Name="workshop2.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+        <FileNode Name="homework-class02.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-NPS8RLI\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-NPS8RLI\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>workshop2.sql</FullPath>
-        </FileNode>
-        <FileNode Name="workshop3.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>workshop3.sql</FullPath>
+          <FullPath>homework-class02.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
