@@ -45,11 +45,12 @@ VALUES(0.3, 0, 2)
 INSERT INTO Orders(OrderPrice, IsDelivered, UserID)
 VALUES(0.5, 1, 3)
 
-select * from Orders
+
 /* ------------------------------------------------------------------------ */
 
 USE PizzaDB
 GO
+
 
 /* Order 1 */
 INSERT INTO Pizzas(Name, PizzaPrice, SizeId, OrderId)

@@ -95,18 +95,63 @@ FOREIGN KEY ([ToppingsID])
 REFERENCES Toppings ([ID]);
 GO
 
+/* There should be a function that concatenates First and Last Name of a user? */
 select FIrstName + ' ' + LastName AS NameOfUser from Users
+-- CREATE FUNCTION ---
+CREATE FUNCTION GetFullName(
+-- variabli --
+	@firstName nvarchar(255),
+	@lastName nvarchar(255)
+)
+RETURNS nvarchar(255)
+AS
+BEGIN
+	RETURN @firstName + ' ' + @lastName
+END
+GO
+-- call FUNCTION --
+SELECT dbo.GetFullName('Robert', 'Ristovski');
+
 select * from Orders
 select * from Pizzas
 
+/* There should be a view to show all pizzas that are not delivered yet and the full names of the users waiting for them? */
+-- CREATE VIEW --
 CREATE OR ALTER VIEW vv_DeliveryPizzzaStatus
 AS
-SELECT u.FirstName + ' ' + u.Lastname AS FullName
-from Orders o
-inner join Users u ON o.UserID = u.ID
-where o.IsDelivered = 0;
-
-
-
+SELECT p.Name, p.SizeID, p.OrderID, dbo.GetFullName(u.FirstName, u.LastName) AS UserFullName
+FROM Pizzas AS p
+-- JOIN TABLE --
+JOIN Orders AS o ON o.Id = p.OrderID
+JOIN Users AS u ON u.Id = o.UserID 
+-- CONDITION --
+WHERE o.IsDelivered = 0
+GO
+-- call VIEW -- 
 SELECT * FROM vv_DeliveryPizzzaStatus
 
+/* There should be a stored procedure that when provided an OrderId, can return the full price of a whole order ( Delivery + All Pizza + All Toppings )? */
+-- CREATE PROCEDURE -- 
+CREATE PROCEDURE GetFullPriceOfOrder
+-- variabli --
+(
+@OrderID int
+)
+AS
+BEGIN
+	DECLARE @pizzasPrice DECIMAL(4, 2)
+	DECLARE @toppingsPrice DECIMAL(4, 2)
+	DECLARE @orderPrice DECIMAL(4, 2)
+
+	SELECT @pizzasPrice = SUM(p.PizzaPrice), @toppingsPrice = SUM(t.ToppingPrice)
+	FROM Orders AS o
+	INNER JOIN Pizzas AS p ON p.OrderID = o.Id
+	JOIN PizzaToppings AS pt ON p.Id = pt.PizzaID
+	JOIN Toppings AS t ON t.Id = pt.ToppingsID
+	WHERE o.Id = @OrderID
+
+	SELECT @orderPrice = OrderPrice FROM Orders
+	WHERE Id = @OrderID
+
+
+END
