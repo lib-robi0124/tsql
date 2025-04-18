@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="DELLALIAN:SDX\Robertr2">
+        <ConnectionNode Name="DELLALIAN:DESKTOP-NPS8RLI\rober">
           <Created>2025-04-16T12:26:31.7752623+02:00</Created>
           <Type>SQL</Type>
           <Server>DELLALIAN</Server>
@@ -18,7 +18,7 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
         </ConnectionNode>
-        <ConnectionNode Name="DESKTOP-NPS8RLI\SQLEXPRESS:SDX\Robertr2">
+        <ConnectionNode Name="DESKTOP-NPS8RLI\SQLEXPRESS:DESKTOP-NPS8RLI\rober">
           <Created>2025-04-15T18:11:11.1714899+02:00</Created>
           <Type>SQL</Type>
           <Server>DESKTOP-NPS8RLI\SQLEXPRESS</Server>
@@ -38,8 +38,8 @@
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="createTables.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DELLALIAN:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DELLALIAN</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-NPS8RLI\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-NPS8RLI\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>createTables.sql</FullPath>
         </FileNode>

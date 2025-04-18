@@ -114,6 +114,7 @@ SELECT dbo.GetFullName('Robert', 'Ristovski');
 
 select * from Orders
 select * from Pizzas
+select * from PizzaToppings
 
 /* There should be a view to show all pizzas that are not delivered yet and the full names of the users waiting for them? */
 -- CREATE VIEW --
@@ -139,6 +140,7 @@ CREATE PROCEDURE GetFullPriceOfOrder
 )
 AS
 BEGIN
+	--variable in conditions --
 	DECLARE @pizzasPrice DECIMAL(4, 2)
 	DECLARE @toppingsPrice DECIMAL(4, 2)
 	DECLARE @orderPrice DECIMAL(4, 2)
@@ -153,5 +155,56 @@ BEGIN
 	SELECT @orderPrice = OrderPrice FROM Orders
 	WHERE Id = @OrderID
 
+	SELECT @OrderID AS OrderID , @orderPrice AS OrderPrice , @pizzasPrice AS PrizzasPrice, @toppingsPrice AS ToppingPrice, 
+	SUM(@pizzasPrice + @toppingsPrice + @orderPrice) AS FullPrice
 
 END
+GO
+-- call PROCEDURE --
+EXEC dbo.GetFullPriceOfOrder 
+@orderID = 1
+
+/* There should be a view that lists pizzas by the number of times ordered, starting from the most popular one ( Most times ordered )? */
+
+CREATE VIEW [Pizza Popularity with Toppings] 
+AS
+	SELECT p.Name, COUNT(p.Name) AS [Number of times ordered]  
+	FROM Orders AS o
+	JOIN Pizzas AS p ON o.Id = p.OrderID
+	JOIN PizzaToppings AS pt ON p.Id = pt.PizzaID
+	GROUP BY p.Name
+GO
+
+SELECT * FROM [Pizza Popularity with Toppings]
+ORDER BY [Number of times ordered] DESC
+
+/* There should be a view that lists toppings by the number of times ordered, starting from the most popular one ( Most times ordered )? */
+
+CREATE VIEW [Topping Popularity]
+AS
+	SELECT t.ToppingName, COUNT(t.ToppingName) AS [Number of times ordered]
+	FROM Orders AS o
+	JOIN Pizzas AS p ON o.Id = p.OrderID
+	JOIN PizzaToppings AS pt ON p.Id = pt.PizzaID
+	JOIN Toppings AS t ON t.Id = pt.ToppingsID
+	GROUP BY t.ToppingName
+GO
+
+SELECT * FROM [Topping Popularity]
+ORDER BY [Number of times ordered] DESC
+
+/* There should be a view with users and the amount of pizzas they ordered? */
+
+CREATE VIEW [Pizza Ordered by User]
+AS 
+	SELECT dbo.GetFullName(u.FirstName, u.LastName) AS [User], COUNT(u.Id) AS [Pizza Ordered]
+	FROM Users u
+	JOIN Orders o ON u.Id = o.UserID
+	JOIN Pizzas p ON o.Id = p.OrderID
+	GROUP BY dbo.GetFullName(u.FirstName, u.LastName)
+GO
+
+SELECT * FROM [Pizza Ordered by User]
+ORDER BY [Pizza Ordered] DESC
+	
+
