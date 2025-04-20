@@ -145,6 +145,7 @@ BEGIN
 	DECLARE @toppingsPrice DECIMAL(4, 2)
 	DECLARE @orderPrice DECIMAL(4, 2)
 
+	-- get Pizza prize and Topping Price
 	SELECT @pizzasPrice = SUM(p.PizzaPrice), @toppingsPrice = SUM(t.ToppingPrice)
 	FROM Orders AS o
 	INNER JOIN Pizzas AS p ON p.OrderID = o.Id
@@ -152,9 +153,12 @@ BEGIN
 	JOIN Toppings AS t ON t.Id = pt.ToppingsID
 	WHERE o.Id = @OrderID
 
-	SELECT @orderPrice = OrderPrice FROM Orders
+	-- get Order Price
+	SELECT @orderPrice = OrderPrice 
+	FROM Orders
 	WHERE Id = @OrderID
 
+	-- output
 	SELECT @OrderID AS OrderID , @orderPrice AS OrderPrice , @pizzasPrice AS PrizzasPrice, @toppingsPrice AS ToppingPrice, 
 	SUM(@pizzasPrice + @toppingsPrice + @orderPrice) AS FullPrice
 
